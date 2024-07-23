@@ -1,0 +1,26 @@
+@mixin doFlex($flex-direction, $justify-content, $align-items, $gap) {
+    display: flex; flex-direction: $flex-direction; justify-content: $justify-content; align-items: $align-items; gap: $gap;
+}
+
+@mixin centerAbsolute() {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+* {
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    font-size: 1rem; font-family: 'Montserrat', sans-serif;
+}
+  
+h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+
+    & > span {
+        font-size: 2rem;
+    }
+}

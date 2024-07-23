@@ -1,0 +1,123 @@
+@import '../main';
+
+.landing {
+  position: relative;
+
+  display: flex; justify-content: center; align-items: center; flex-direction: column;
+  height: calc(100vh - 3em);
+  margin: 1.5em;
+
+  
+  
+  .img-container {
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: linear-gradient(45deg, #cbd5e1 0, #f1f5f9 100%);
+    border-radius: 1.5em;
+  }
+}
+
+
+
+.block {
+  @include doFlex(column, unset, unset, 1.5em);
+  padding: 1.5em;
+  
+  h2 {
+    text-align: center;
+
+    span.marker {color: #ef4444;}
+  }
+}
+
+
+
+.gallery {
+  display: grid; grid-gap: .5em;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 240px);
+
+  .photo {
+    border-radius: 1.5em;
+    background: linear-gradient(45deg, #cbd5e1 0, #f1f5f9 100%);
+
+    cursor: pointer;
+
+    &:first-of-type {
+      grid-area: 1 / 1 / 1 / span 2;
+    }
+
+    &:last-of-type {
+      position: relative;
+    }
+    &:last-of-type::after {
+      content: "+4";
+      @include centerAbsolute();
+
+      font-weight: bold;
+      font-size: 2rem;
+      color: #000;
+      mix-blend-mode: multiply;
+      opacity: .25;
+    }
+  }
+}
+
+
+
+.meeting {
+  .meet-the-logo {
+    display: block;
+    width: 10.5rem; height: 44px;
+    margin: auto; margin-top: .5em;
+    background-image: url("../img/Logotipo_DETIC__Isolado.png"); background-size: 100%;
+    background-position: center; background-repeat: no-repeat
+  }
+}
+
+
+
+.scheduling {
+  .options {
+    @include doFlex(column, unset, unset, .5em);
+    
+    button {
+      @include doFlex(row, stretch, center, 1.5em);
+      width: 100%;
+      padding: .75em 1.5em;
+
+      border: none; border-radius: 0 1.5em 1.5em 0;
+      background-color: #f1f5f9;
+      border-left: 5px solid #cbd5e1;
+
+      cursor: pointer;
+      transition: .2s;
+
+      i {
+        text-align: left;
+        width: 40px;
+        font-size: 2rem;
+        color: #94a3b8;
+      }
+
+      &.selected {
+        background: linear-gradient(45deg, #ef4444 50%, #2d2d2d 100%);
+        border-color: #2d2d2d; color: #fff;
+        i {color: #2d2d2d;}
+
+        box-shadow: 0 10px 25px 0 #ef4444;
+      }
+    }
+  }
+
+  .forms {
+    .form {
+      display: none;
+
+      &.selected {
+        display: unset;
+      }
+    }
+  }
+}

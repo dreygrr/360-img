@@ -1,0 +1,22 @@
+@import '../main';
+
+footer {
+    @include doFlex(column, center, center, 1.5em);
+    padding: 1.5em;
+    min-height: 180px;
+    text-align: center;
+
+    background-color: #f1f5f9;
+
+    .footer-logo {
+        display: block;
+        height: 40px;
+        width: 150px;
+
+        filter: saturate(0);
+        mix-blend-mode: multiply;
+        opacity: .2;
+        background-image: url('../img/Logotipo_DETIC__Isolado.png');
+        background-position: center; background-size: 100%; background-repeat: no-repeat;
+    }
+}
